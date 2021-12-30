@@ -22,26 +22,26 @@
 	text-align: center;
 	display: block;
 }
-.gsae-gif-block .alignfull,
-.gsae-gif-block .alignfull .components-resizable-box__container,
-.gsae-gif-block .alignfull > figure {
+.gg-gif-block .alignfull,
+.gg-gif-block .alignfull .components-resizable-box__container,
+.gg-gif-block .alignfull > figure {
 	width: 100%!important;
 	max-width: 100%!important;
 	margin-left: auto!important;
 	margin-right: auto!important;
 	height: auto!important;
 }
-.gsae-gif-block .aligncenter {
+.gg-gif-block .aligncenter {
 	margin-left: auto!important;
 	margin-right: auto!important;
 }
-.gsae-gif-block .components-resizable-box__container figure {
+.gg-gif-block .components-resizable-box__container figure {
 	width: 100%!important;
 }
-/*.wp-block-image.gsae-gif-block figcaption span:nth-child(1) {
+/*.wp-block-image.gg-gif-block figcaption span:nth-child(1) {
 	float: left;
 }
-.wp-block-image.gsae-gif-block figcaption span:nth-child(2) {
+.wp-block-image.gg-gif-block figcaption span:nth-child(2) {
 	float: right;
 }*/
 .powered-by {
@@ -59,17 +59,17 @@
 	display: block;
 	width: 100%;
 }
-/*.gsae-gif-block figure {
+/*.gg-gif-block figure {
 	display: flex!important;
 	flex-direction: column;
 }*/
-.gsae-gif-block .alignnone {
+.gg-gif-block .alignnone {
 	display: table;
 }
-.gsae-gif-block figure img {
+.gg-gif-block figure img {
 	width: 100%!important;
 }
-.gsae-gif-block .alignnone > figcaption {
+.gg-gif-block .alignnone > figcaption {
     display: table-caption;
     caption-side: bottom;
 }
@@ -79,15 +79,18 @@
 .nogif {
 	opacity: .5;
 }
-.gsae-gif-block.alignleft,
-.gsae-gif-block.alignright {
+.gg-gif-block.alignleft,
+.gg-gif-block.alignright {
 	float:none!important;
 }
-.gsae-gif-block .components-resizable-box__container,
-.gsae-gif-block figure {
+.gg-gif-block .components-resizable-box__container,
+.gg-gif-block figure {
 	max-width: 100%;
 }
-.gsae-gif-block .alignwide {
+.gg-gif-block figure > div {
+	width: 100%;
+}
+.gg-gif-block .alignwide {
 	width: 100vw!important;
 	max-width: 100vw!important;
 	position: relative;
@@ -97,8 +100,8 @@
 	margin-right: -50vw;
 
 }
-.gsae-gif-block .alignwide .components-resizable-box__container,
-.gsae-gif-block .alignwide > figure {
+.gg-gif-block .alignwide .components-resizable-box__container,
+.gg-gif-block .alignwide > figure {
 	width: 100%!important;
 	margin-left: 0!important;
 	margin-right: 0!important;

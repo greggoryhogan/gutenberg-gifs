@@ -17,7 +17,7 @@ const __ = wp.i18n.__; // The __() for internationalization.
 const GifSearch = ( {attributes, setAttributes, searchTerm, setGifSearch, gifResults, pagePos, hasNextPage, isLoading, setGif, plugin_settings } ) => {
 	
 	const {altText,currentGif} = attributes;
-	const keyLabel = sprintf( __('Please enter your Tenor API key on the <a href="%s">settings page</a>.','gsae'), plugin_settings.gsae_settings_page );
+	const keyLabel = sprintf( __('Please enter your Tenor API key on the <a href="%s">settings page</a>.','gg'), plugin_settings.gg_settings_page );
 	
 	//alt text box
 	let altTextInput = <TextControl
@@ -28,9 +28,8 @@ const GifSearch = ( {attributes, setAttributes, searchTerm, setGifSearch, gifRes
 			altText: value
 		}) }
 	/>
-	
-	//remove alt text box if not key has been entered
-	if(!currentGif && plugin_settings.tenor_api_key == '') {
+	//remove alt text box if not key has been entered or there is no gif defined
+	if(!currentGif || plugin_settings.tenor_api_key == '') {
 		altTextInput = '';
 	}
 
@@ -51,7 +50,7 @@ const GifSearch = ( {attributes, setAttributes, searchTerm, setGifSearch, gifRes
 	if(plugin_settings.tenor_api_key == '') {
 		gifSearchInput = <Fragment>
 			<RichText.Content tagName="p" value={keyLabel} />
-			<Button className='components-button is-secondary' href={plugin_settings.gsae_settings_page}>{ __( 'Visit Settings Page' ) }</Button>
+			<Button className='components-button is-secondary' href={plugin_settings.gg_settings_page}>{ __( 'Visit Settings Page' ) }</Button>
 		</Fragment>
 	}
 

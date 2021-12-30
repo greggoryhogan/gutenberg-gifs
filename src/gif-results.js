@@ -40,7 +40,7 @@ const GifResults = ({ gifResults, setGif, setGifSearch, pagePos, searchTerm, has
 
 	// if we do not have any results to show, show the message and prevent code from further rendering
 	if ( !gifResults.length ) return '';
-	
+	console.log(gifResults);
 	return (
 		<div>
 			<div class="gifresults">
