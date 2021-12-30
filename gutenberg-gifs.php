@@ -1,7 +1,7 @@
 <?php
 /*
-Plugin Name:  Gif Search and Embed
-Plugin URI:	  https://fragmentwebworks.com/plugins/gif-search-and-embed/
+Plugin Name:  Gutenberg Gifs
+Plugin URI:	  https://fragmentwebworks.com/product/gutenberg-gifs/
 Description:  Search and embed gifs from Tenor to Gutenberg enabled posts, pages and widgets
 Version:	  1.0.0
 Author:		  Fragment Web Works
@@ -9,7 +9,6 @@ Author URI:   https://fragmentwebworks.com
 License:      GPL2
 License URI:  https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain:  gsae
-Domain Path:  /languages
 */
 
 if ( ! defined( 'ABSPATH' ) ) {
