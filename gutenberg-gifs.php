@@ -3,7 +3,7 @@
 Plugin Name:  Gutenberg Gifs
 Plugin URI:	  https://fragmentwebworks.com/product/gutenberg-gifs/
 Description:  Search and embed gifs from Tenor to Gutenberg enabled posts, pages and widgets
-Version:	  1.0.4
+Version:	  1.0.5
 Author:		  Fragment Web Works
 Author URI:   https://fragmentwebworks.com
 License:      GPL2
@@ -113,7 +113,12 @@ add_action( 'enqueue_block_editor_assets', 'gg_editor_assets' );
 add_action( 'after_setup_theme', 'gg_add_theme_support' );
 function gg_add_theme_support() {
     //add aligment support to theme
-    add_theme_support('align-wide');
-    //allow images to be resizes when embedded
-    add_theme_support( 'responsive-embeds' );
+    $wide = get_theme_support( 'align-wide' );
+    if( $wide === false ) {
+        add_theme_support( 'align-wide' );    
+    }
+    $embed = get_theme_support( 'responsive-embeds' );
+    if( $embed === false ) {
+        add_theme_support( 'responsive-embeds' );    
+    }
 }
