@@ -4,7 +4,7 @@ import apiFetch from '@wordpress/api-fetch';
 import { RichText } from '@wordpress/block-editor';
 import GifSearch from './gif-search';
 import GifBox from './gif-box';
-import { BlockControls, BlockAlignmentToolbar } from '@wordpress/block-editor'; //to add alignment without using support
+import { BlockControls  } from '@wordpress/block-editor'; //to add alignment without using support
 
 const __ = wp.i18n.__; // The __() for internationalization.
 const registerBlockType = wp.blocks.registerBlockType; // The registerBlockType() to register blocks.
@@ -30,6 +30,9 @@ registerBlockType("fragment/gif-search-and-embed", {
 	icon: "format-image",
 	category: "media", // pick a category from core provided ones or create a custom one
 	keywords: [__("Image"), __("Gif")],
+	supports: {
+		align: ['left', 'right', 'center', 'full']
+	},
 	// attributes start here
 	attributes: {
 		currentGif: {
@@ -46,9 +49,6 @@ registerBlockType("fragment/gif-search-and-embed", {
 		},
 		captionText: {
 			type: 'string',
-		},
-		align: {
-			type: "string",
 		},
 		gifBoxWidth: {
 			type: 'number',
@@ -128,14 +128,7 @@ registerBlockType("fragment/gif-search-and-embed", {
 
 		return(
 			<Fragment>
-				<BlockControls>
-				<BlockAlignmentToolbar
-					value={ attributes.align }
-					onChange={ ( nextAlign ) => {
-						setAttributes( { align: nextAlign } );
-					} }
-				/>
-				</BlockControls>
+				<BlockControls ></BlockControls>
 				<GifSearch attributes={attributes} gifResults={gifResults} setAttributes={setAttributes} setGifSearch={setGifSearch} searchTerm={searchTerm} pagePos={pagePos} hasNextPage={hasNextPage} isLoading={isLoading} setGif={setGif} plugin_settings={plugin_settings} />
 				<GifBox attributes={attributes} setCaption={setCaption} setAttributes={setAttributes} plugin_settings={plugin_settings} />
 			</Fragment>
@@ -161,16 +154,18 @@ registerBlockType("fragment/gif-search-and-embed", {
 		if(captionText) {
 			caption = captionText;
 		}
+		let sizes = '(max-width: ' + gifBoxWidth + 'px) 100vw, ' + gifBoxWidth + 'px';
 		return(
 			<Fragment>
 				<div className="wp-block-image gg-gif-block">
-					<figure className={classes} style={{width:gifBoxWidth}}>
+					<figure className={classes}>
 						<div className="components-resizable-box__container">
 							<img 
 								src={currentGif}
-								width={currentGifWidth}
+								width={gifBoxWidth}
 								height={currentGifHeight}
-								alt={altText} />
+								alt={altText}
+								sizes={sizes} />
 						</div>
 						<figcaption>
 							<RichText.Content tagName="span" value={ caption } />

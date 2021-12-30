@@ -66,7 +66,7 @@
 .gg-gif-block .alignnone {
 	display: table;
 }
-.gg-gif-block figure img {
+.gg-gif-block figure.alignwide img {
 	width: 100%!important;
 }
 .gg-gif-block .alignnone > figcaption {
@@ -90,7 +90,7 @@
 .gg-gif-block figure > div {
 	width: 100%;
 }
-.gg-gif-block .alignwide {
+/*.gg-gif-block .alignwide {
 	width: 100vw!important;
 	max-width: 100vw!important;
 	position: relative;
@@ -99,9 +99,9 @@
 	margin-left: -50vw;
 	margin-right: -50vw;
 
-}
-.gg-gif-block .alignwide .components-resizable-box__container,
-.gg-gif-block .alignwide > figure {
+}*/
+.gg-gif-block .alignfull .components-resizable-box__container,
+.gg-gif-block .alignfull img {
 	width: 100%!important;
 	margin-left: 0!important;
 	margin-right: 0!important;
